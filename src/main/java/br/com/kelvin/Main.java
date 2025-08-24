@@ -1,6 +1,8 @@
 package br.com.kelvin;
 
+import br.com.kelvin.persistence.ItemAuditDAO;
 import br.com.kelvin.persistence.ItemDao;
+import br.com.kelvin.persistence.entity.ItemAuditEntity;
 import br.com.kelvin.persistence.entity.ItemEntity;
 import org.flywaydb.core.Flyway;
 
@@ -69,6 +71,16 @@ public class Main {
         allItems = dao.findAll();
         allItems.forEach(i -> System.out.println(i.getId() + " - " + i.getString()));  */
 
+
+        ItemAuditDAO auditDao = new ItemAuditDAO();
+        // Buscar todos os registros da view
+        List<ItemAuditEntity> allAudits = auditDao.findAll();
+        allAudits.forEach(a -> System.out.println(a));
+
+        // Buscar por item_id específico
+        long itemIdToCheck = 1L;
+        List<ItemAuditEntity> auditsForItem = auditDao.findByItemId(itemIdToCheck);
+        auditsForItem.forEach(a -> System.out.println(a));
 
 
 
