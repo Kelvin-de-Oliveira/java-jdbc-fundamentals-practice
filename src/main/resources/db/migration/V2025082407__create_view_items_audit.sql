@@ -1,0 +1,3 @@
+CREATE OR REPLACE VIEW ItemsAuditView AS
+SELECT *
+FROM Items_audit;
