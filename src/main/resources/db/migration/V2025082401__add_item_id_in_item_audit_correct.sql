@@ -1,0 +1,1 @@
+ALTER TABLE Items_audit ADD COLUMN item_id  BIGINT not null AFTER Id;

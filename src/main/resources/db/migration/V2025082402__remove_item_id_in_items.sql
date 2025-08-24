@@ -1,0 +1,1 @@
+ALTER TABLE Items DROP COLUMN item_id
